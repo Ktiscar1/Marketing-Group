@@ -28,7 +28,7 @@ Both male and female income distributions peak in the mid-income range (roughly 
 * The female distribution is more concentrated around the center, suggesting less variability and a higher frequency of middle-income earners.
 * The male distribution has a longer right tail, indicating greater variability and the presence of higher-income outliers, which causes a slight right skew.
 
-[Annual Income - Gender](https://github.com/Ktiscar1/Marketing-Group/blob/b5faeef4c7e926afe34477b7dbefd6cd3436093a/Annual_incomme_gender.png)
+![Annual Income - Gender](https://github.com/Ktiscar1/Marketing-Group/blob/b5faeef4c7e926afe34477b7dbefd6cd3436093a/Annual_incomme_gender.png)
 
 Using the frequency distribution graph is possible to notice the following data:
 Overall overlap:
@@ -44,6 +44,6 @@ The two curves overlap a lot, meaning many males and females have similar spendi
 * Male customersThe peak is slightly younger (mid-to-late 20s) and the curve is broader, indicating greater age diversity.
 * Males extend more into older age groups (50–70+) than females.
 
-[Age - Gender](https://github.com/Ktiscar1/Marketing-Group/blob/33a44d051155ccf3abf487d64e8da25ae6aabcf8/age_gender.png)
+![Age - Gender](https://github.com/Ktiscar1/Marketing-Group/blob/33a44d051155ccf3abf487d64e8da25ae6aabcf8/age_gender.png)
 
-[Spending Score - Gender](https://github.com/Ktiscar1/Marketing-Group/blob/1357b24316666f0a79843ef0794b085f78e2925d/spending_score_gender.png)
+![Spending Score - Gender](https://github.com/Ktiscar1/Marketing-Group/blob/1357b24316666f0a79843ef0794b085f78e2925d/spending_score_gender.png)
