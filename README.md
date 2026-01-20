@@ -8,7 +8,7 @@ The objective of this problem is to identify the most important shopping groups 
 2. Use K-means clustering algorithm to create segments
 3. Summarize Statics on the clusters
 
-# Exploratory Data Analysis 
+# Exploratory Data Analysis (Univariate & Bivariate)
 
 # Univariate Analysis
 Focusing on variable at a time allows use to find patterns within that single variable.
@@ -52,7 +52,7 @@ The two curves overlap a lot, meaning many males and females have similar spendi
 
 # Bivariarte Analysis
 
-A scatter plot is employed to assess the relationship between Spending Score and Annual Income. Preliminary visual inspection, without the application of advanced analytical techniques, indicates the presence of distinct groupings within the data. Specifically, the observations suggest the existence of approximately five clusters, as well as a limited number of outliers.
+A scatter plot is employed to assess the relationship between "Spending Score" and "Annual Income." Preliminary visual inspection, without the application of advanced analytical techniques, indicates the presence of distinct groupings within the data. Specifically, the observations suggest the existence of approximately five clusters, as well as a limited number of outliers.
 
 ![Scatter plot between Annual Income and Spending Score](https://github.com/Ktiscar1/Marketing-Group/blob/b26462ce4f251c86f458d59538b992b249110296/scatter_plot_income_spending.png)
 
@@ -64,3 +64,8 @@ As a last step we generate a heatmap to observe the correlation between the data
 
 ![Heatmap](https://github.com/Ktiscar1/Marketing-Group/blob/b86557ef7ce9d9f9cdb7ff57cf2033fc42fcbf74/heatmap.png)
 
+# K-Means Algorithm Clustering (Univariate, Bivariate & Multivarite)
+
+In the next step, the Annual Income data are fitted to a K-means clustering algorithm, which partitions the dataset into distinct groups. The resulting cluster labels are then compared with the original data by assigning them as a new feature
+' df['Income Cluster'] = clustering1.labels_ '
+This approach enables the computation of summary statistics for each identified cluster.
