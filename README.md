@@ -8,7 +8,9 @@ The objective of this problem is to identify the most important shopping groups 
 2. Use K-means clustering algorithm to create segments
 3. Summarize Statics on the clusters
 
-# Exploratory Data Analysis
+# Exploratory Data Analysis 
+
+# Univariate Analysis
 Focusing on variable at a time allows use to find patterns within that single variable.
 
 We can notice that both columns for "Age" and "Annual Income (k$)" present a positive skew where most of the data is concentrated in the lower to middle income ranges.
@@ -28,7 +30,7 @@ Both male and female income distributions peak in the mid-income range (roughly 
 * The female distribution is more concentrated around the center, suggesting less variability and a higher frequency of middle-income earners.
 * The male distribution has a longer right tail, indicating greater variability and the presence of higher-income outliers, which causes a slight right skew.
 
-![Annual Income - Gender](https://github.com/Ktiscar1/Marketing-Group/blob/b5faeef4c7e926afe34477b7dbefd6cd3436093a/Annual_incomme_gender.png)
+![Annual Income - Gender](https://github.com/Ktiscar1/Marketing-Group/blob/987e163a5b666d4b188e504dc9f37183625b6d50/Annual_income_gender.png)
 
 Using the frequency distribution graph is possible to notice the following data:
 Overall overlap:
@@ -47,3 +49,18 @@ The two curves overlap a lot, meaning many males and females have similar spendi
 ![Age - Gender](https://github.com/Ktiscar1/Marketing-Group/blob/33a44d051155ccf3abf487d64e8da25ae6aabcf8/age_gender.png)
 
 ![Spending Score - Gender](https://github.com/Ktiscar1/Marketing-Group/blob/1357b24316666f0a79843ef0794b085f78e2925d/spending_score_gender.png)
+
+# Bivariarte Analysis
+
+A scatter plot is employed to assess the relationship between Spending Score and Annual Income. Preliminary visual inspection, without the application of advanced analytical techniques, indicates the presence of distinct groupings within the data. Specifically, the observations suggest the existence of approximately five clusters, as well as a limited number of outliers.
+
+![Scatter plot between Annual Income and Spending Score](https://github.com/Ktiscar1/Marketing-Group/blob/b26462ce4f251c86f458d59538b992b249110296/scatter_plot_income_spending.png)
+
+To efficiently examine multivariate relationships, marginal distributions, and structural patterns within the dataset, a pair plot is employed, with gender used as a categorical differentiating variable. This visualization facilitates the preliminary identification of potential cluster structures in the data prior to formal clustering analysis.
+
+![Pair Plot](https://github.com/Ktiscar1/Marketing-Group/blob/a8e791ecf5653cf74437b2ed186c43255c252a93/paitplot.png)
+
+As a last step we generate a heatmap to observe the correlation between the data.
+
+![Heatmap](https://github.com/Ktiscar1/Marketing-Group/blob/b86557ef7ce9d9f9cdb7ff57cf2033fc42fcbf74/heatmap.png)
+
