@@ -66,6 +66,12 @@ As a last step we generate a heatmap to observe the correlation between the data
 
 # K-Means Algorithm Clustering (Univariate, Bivariate & Multivarite)
 
-In the next step, the Annual Income data are fitted to a K-means clustering algorithm, which partitions the dataset into distinct groups. The resulting cluster labels are then compared with the original data by assigning them as a new feature
-' df['Income Cluster'] = clustering1.labels_ '
+In the next step, the Annual Income data is fitted to a K-means clustering algorithm, which partitions the dataset into distinct groups. The resulting cluster labels are then compared with the original data by assigning them as a new feature:
+
+
+```python
+df['Income Cluster'] = clustering1.labels_
+```
+
+
 This approach enables the computation of summary statistics for each identified cluster.
