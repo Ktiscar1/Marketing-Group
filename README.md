@@ -72,6 +72,6 @@ In the next step, the Annual Income data is fitted to a K-means clustering algor
 ```python
 df['Income Cluster'] = clustering1.labels_
 ```
-
+<img width="927" height="284" alt="image" src="https://github.com/user-attachments/assets/d8d9ccd4-963d-4491-80d5-670072b09b04" />
 
 This approach enables the computation of summary statistics for each identified cluster.
