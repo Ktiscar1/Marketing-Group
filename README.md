@@ -75,3 +75,32 @@ df['Income Cluster'] = clustering1.labels_
 <img width="927" height="284" alt="image" src="https://github.com/user-attachments/assets/d8d9ccd4-963d-4491-80d5-670072b09b04" />
 
 This approach enables the computation of summary statistics for each identified cluster.
+
+
+*(This process is done after already finding the ideal size of clusters needed)*
+Now is possible to do summary statistics around the univariate cluster.
+
+We can check how many of the customers fall on each cluster.
+```python
+df['Income Cluster'].value_counts()
+```
+<img width="262" height="255" alt="image" src="https://github.com/user-attachments/assets/016a66a8-7061-4283-8d89-3a7cc0651cd4" />
+We can see that cluster #2 contains a higher count of customers and cluster #1 contains a lower count of customers.
+
+```python
+clustering1.inertia_
+```
+This represents the distance between the centroids.
+
+The next step is to fit the possible clusters in "Anual Income" and append them to the inertia score.
+
+```python
+inertia_scores=[]
+for i in range(1,11):
+  kmeans=KMeans(n_clusters=i)
+  kmeans.fit(df[['Annual Income (k$)']])
+  inertia_scores.append(kmeans.inertia_)
+```
+
+Scores:
+<img width="282" height="248" alt="image" src="https://github.com/user-attachments/assets/cb39a306-2ceb-4f3a-a6a0-dcbb4a71d910" />
