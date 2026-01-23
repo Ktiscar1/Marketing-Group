@@ -77,7 +77,7 @@ df['Income Cluster'] = clustering1.labels_
 This approach enables the computation of summary statistics for each identified cluster.
 
 
-*(This process is done after already finding the ideal size of clusters needed)*
+*(This process is iterative and is modified with each pass to obtain optimal number of clusters)*
 Now is possible to do summary statistics around the univariate cluster.
 
 We can check how many of the customers fall on each cluster.
@@ -85,12 +85,15 @@ We can check how many of the customers fall on each cluster.
 df['Income Cluster'].value_counts()
 ```
 <img width="262" height="255" alt="image" src="https://github.com/user-attachments/assets/016a66a8-7061-4283-8d89-3a7cc0651cd4" />
+
 We can see that cluster #2 contains a higher count of customers and cluster #1 contains a lower count of customers.
 
 ```python
 clustering1.inertia_
 ```
 This represents the distance between the centroids.
+*(Clusters from range 1 to 11 were generated to to obtained ideal clusters)*
+*(This table contains optimal number of cluster, for whole proceess check Colab Notebook)*
 
 The next step is to fit the possible clusters in "Anual Income" and append them to the inertia score.
 
@@ -102,5 +105,9 @@ for i in range(1,11):
   inertia_scores.append(kmeans.inertia_)
 ```
 
-Scores:
 <img width="282" height="248" alt="image" src="https://github.com/user-attachments/assets/cb39a306-2ceb-4f3a-a6a0-dcbb4a71d910" />
+
+After obatining the scores we generate an elbow plot to determine the optimal number of clusters. We can observe that the elbow occurs between clusters #2 and #4 meaning that the optimal number of clusters is 3.
+
+![Elbow Plot](https://github.com/Ktiscar1/Marketing-Group/blob/e06bee0a6930fc5b661e74ce0f7954ffaef9ba1d/Elbow%20plot.png)
+
