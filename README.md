@@ -18,12 +18,11 @@ We can notice that both columns for "Age" and "Annual Income (k$)" present a pos
 ![Histogram for Annual Income](https://github.com/Ktiscar1/Marketing-Group/blob/36365d96f4da7aa2c28bb08c9d07a06d12a279f6/annual_income_analysis_uni.png)
 
 ![Histogram for Age](https://github.com/Ktiscar1/Marketing-Group/blob/f7e8497551b92cf8e570dfd1c8f746aec183db78/age_uni.png)
-
-We can observe that the column "Spending Score (1-100)" contains a symmetrical Distribution where the data appears fairly balanced around the center (around a spending score of 50), with similar frequencies on both the lower and higher sides.
+The symmetrical distribution can be observed with the column "Spending Score (1-100)," where the data appears fairly balanced around the center (around a spending score of 50), with similar frequencies on both the lower and higher sides.
 
 ![Histogram for Spending Score](https://github.com/Ktiscar1/Marketing-Group/blob/4894b1952a3b26129fa632f2160fa6ed77b7b68d/Spending_Score_Uni.png)
 
-To gather more information from the data, we can separate it into dimensions, such as gender, to achieve a more comprehensive analysis and identify frequencies and outliers.
+To gather more information from the data, this information can be separated it into dimensions, such as gender, to achieve a more comprehensive analysis and identify frequencies and outliers.
 
 Using frequency distribution graphs is possible to notice the following data:
 Both male and female income distributions peak in the mid-income range (roughly $40k–$80k), indicating that most customers fall within this bracket.
@@ -60,11 +59,13 @@ To efficiently examine multivariate relationships, marginal distributions, and s
 
 ![Pair Plot](https://github.com/Ktiscar1/Marketing-Group/blob/a8e791ecf5653cf74437b2ed186c43255c252a93/paitplot.png)
 
-As a last step we generate a heatmap to observe the correlation between the data.
+As a last step, a heatmap can be generated to observe the correlation between the data.
 
 ![Heatmap](https://github.com/Ktiscar1/Marketing-Group/blob/b86557ef7ce9d9f9cdb7ff57cf2033fc42fcbf74/heatmap.png)
 
 # K-Means Algorithm Clustering (Univariate, Bivariate & Multivarite)
+
+# Univariate Clustering
 
 In the next step, the Annual Income data is fitted to a K-means clustering algorithm, which partitions the dataset into distinct groups. The resulting cluster labels are then compared with the original data by assigning them as a new feature:
 
@@ -95,7 +96,7 @@ This represents the distance between the centroids.
 *(Clusters from range 1 to 11 were generated to to obtained ideal clusters)*
 *(This table contains optimal number of cluster, for whole proceess check Colab Notebook)*
 
-The next step is to fit the possible clusters in "Anual Income" and append them to the inertia score.
+The next step is to fit the possible clusters in "Annual Income" and append them to the inertia score.
 
 ```python
 inertia_scores=[]
@@ -112,6 +113,28 @@ After obtaining the scores we generate an elbow plot to determine the optimal nu
 ![Elbow Plot](https://github.com/Ktiscar1/Marketing-Group/blob/e06bee0a6930fc5b661e74ce0f7954ffaef9ba1d/Elbow%20plot.png)
 
 *(After conducting an analysis of the iterative process to obtain the optimal number of clusters is possible to produce the following table)*
+
+By aggregating "Age, "Annual Income," and "Spending Score" to "Income Clusters" and obtaining the mean foe the tables is possible to observe that people in cluster 0 contains the highest annual incomme, the ones in cluster 2 contains the "middle" income and cluster 1 is the demographic with less annual income.
+
 <img width="714" height="261" alt="image" src="https://github.com/user-attachments/assets/87618af0-bb18-4fb7-8301-73ec7dbd6e7b" />
 
-In this table we agregate "Age, "Annual Income," and "Spending Score" to "Income Clusters"
+# Bivariate Clustering
+
+*(For this section can use same method to find the ideal number of clusters)*
+
+The "Annual Income" and "Spending Score" columns need to be fitted to transform raw, unlabeled data into actionable, categorized information. This produce the following table:
+
+<img width="1222" height="286" alt="image" src="https://github.com/user-attachments/assets/e69cd0b5-ebd8-404a-87fe-a55a1531c1b9" />
+
+This table can be optimized using the optimal number of clusters (The same method used in the univariate clustering can be used here).
+
+```python
+inertia_scores2=[]
+for i in range(1,11):
+  kmeans2=KMeans(n_clusters=i)
+  kmeans2.fit(df[['Annual Income (k$)', 'Spending Score (1-100)']])
+  inertia_scores2.append(kmeans2.inertia_)
+```
+
+With this optimization it is possible to generate an elbow table and create a new scatter plott to gather relevant information regarding the spending trend between the demographic.
+
