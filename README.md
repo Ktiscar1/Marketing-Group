@@ -6,7 +6,7 @@ The objective of this problem is to identify the most important shopping groups 
 # Approach
 1. Perform EDA
 2. Use K-means clustering algorithm to create segments
-3. Summarize Statics on the clusters
+3. Summarize Statistics on the clusters
 
 # Exploratory Data Analysis (Univariate & Bivariate)
 
@@ -198,7 +198,7 @@ After analysing the elbow plot it is possible to observe that the elbow occurs b
 
 *(More analysis can be done but is not needed to obtain thee relevant needed information)*
 
-# Summarize Statics on the clusters
+# Summarize Statistics on the clusters
 
 ![Scatter Plot](https://github.com/Ktiscar1/Marketing-Group/blob/4beb490062287707ec5e2d80d2a0513fbeb99320/scatter%20plot%20bivariate.png)
 
