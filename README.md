@@ -108,7 +108,7 @@ for i in range(1,11):
 
 <img width="282" height="248" alt="image" src="https://github.com/user-attachments/assets/cb39a306-2ceb-4f3a-a6a0-dcbb4a71d910" />
 
-After obtaining the scores we generate an elbow plot to determine the optimal number of clusters. We can observe that the elbow occurs between clusters #2 and #4 meaning that the optimal number of clusters is 3.
+An elbow plot is generated to determine the optimal number of clusters. It is observable that the elbow occurs between clusters 2 and 4 meaning that the optimal number of clusters is 3.
 
 ![Elbow Plot](https://github.com/Ktiscar1/Marketing-Group/blob/e06bee0a6930fc5b661e74ce0f7954ffaef9ba1d/Elbow%20plot.png)
 
@@ -138,3 +138,70 @@ for i in range(1,11):
 
 With this optimization it is possible to generate an elbow table and create a new scatter plott to gather relevant information regarding the spending trend between the demographic.
 
+![Elbow Plot Bivariate](https://github.com/Ktiscar1/Marketing-Group/blob/a62d452690e83775bee730eb1a24fc3c9d9720d0/Elbow%20Plot%20Bivariate.png)
+
+After analysing the elbow plot it is possible to observe that the elbow occurs between clusters 4 and 6 meaning that the optimal number of clusters is 5. 
+
+With this new information the next step is to do a visual analysis with the correct number of clusters. A scatter plot allow the visualization of relationships, correlations and patter between the variables. 
+
+![Scatter Plot](https://github.com/Ktiscar1/Marketing-Group/blob/4beb490062287707ec5e2d80d2a0513fbeb99320/scatter%20plot%20bivariate.png)
+
+Using "Annual income" as the x-axis and the "Spending Score" as the y-axis it is possible to determining the following information:
+
+* Cluster 0 contains high income and high spending.
+  * "Premium customers could be located in this demographic.
+* Cluster 1 contains low income and high spending.
+  * Enthusiastic spenders despite lower income.
+* Cluster 2 contains high income and low spending.
+  * Financially capable but not engaged. This is untapped potential.
+* Cluster 3 contains mid income and mid spending.
+  * Reliable costumers.
+* Cluster 4 contains very high income and mid spending (closer to low spending).
+  * High earners with inconsistent behavior
+* Clusters 0 and 1 are the strongest revenue drivers.
+* cluster 2 is the biggest growth opportunity.
+* Cluster 3 contains the demographic that spends as much as it earns.
+* Cluster 4 may be worth deeper analysis..
+
+It is possible to check for gender and average age of the clusters for deeper analysis
+<img width="499" height="313" alt="image" src="https://github.com/user-attachments/assets/cd257023-935a-452b-8521-5b2bef160db2" />
+
+<img width="850" height="349" alt="image" src="https://github.com/user-attachments/assets/ec90c17e-6eb8-497e-bb6c-c1d7aaa25090" />
+
+# Multivariate Analysis
+
+The first step for handling multivariate analysis is to do scale the data to allow the algorithm to ensure that features with larger numerical ranges do not disproportionately dominate. 
+
+In order to scale the data correctly the following steps are follow
+
+* Apply one hot encoder to "Gender" column to get rid of male and female labels and instead replacing it with 0 and 1
+* Dropping the useless colums
+    * "Gender" - Strings
+    * "Income Cluster"
+    * "Spending and Income Cluster"
+
+<img width="693" height="284" alt="image" src="https://github.com/user-attachments/assets/89dbfe4e-2328-47a1-9a1c-162c3d860db5" />
+
+Now it is possible to scale the data using the new table into a new dataframe to generete the correct analysis.
+
+```python
+inertia_scores3=[]
+for i in range(1,11):
+  kmeans3 = KMeans(n_clusters=i)
+  kmeans3.fit(dff)
+  inertia_scores3.append(kmeans3.inertia_)
+```
+
+![Elbow Multivariate](https://github.com/Ktiscar1/Marketing-Group/blob/1a2bfb452635ae54c2a154216330bdcaa1a2b567/Elbow%20Plot%20Multi.png)
+
+After analysing the elbow plot it is possible to observe that the elbow occurs between clusters 3 and 6 where cluster 4 shows a curve that starts to flatten with each additional step.
+
+*(More analysis can be done but is not needed to obtain thee relevant needed information)*
+
+# Summarize Statics on the clusters
+
+![Scatter Plot](https://github.com/Ktiscar1/Marketing-Group/blob/4beb490062287707ec5e2d80d2a0513fbeb99320/scatter%20plot%20bivariate.png)
+
+* Target group would be cluster 0 which has a high "Spending Score"
+* 54% of cluster 0 shoppers are women. Marketing team shoul look for ways to attract these costumers using marketing campaign targeting popular intems in this demographic
+* Cluster 1 presents an opportunity to market to the customers for sales event in popular items.
